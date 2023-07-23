@@ -1,22 +1,3 @@
 {
-  "name": "type-script-arcanoid-2023",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "source": "src/index.html",
-  "author": "Bassist.Axel",
-  "license": "MIT",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "parcel",
-    "build": "parcel build"
-  },
-  "devDependencies": {
-    "@parcel/core": "^2.9.3",
-    "@parcel/transformer-typescript-tsc": "^2.9.3",
-    "parcel": "^2.9.3",
-    "parcel-bundler": "^1.12.5",
-    "typescript": "^5.1.6"
-  },
-  "packageManager": "yarn@3.6.0"
+  "packageManager": "yarn@3.6.1"
 }
