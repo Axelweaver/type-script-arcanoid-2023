@@ -1,5 +1,13 @@
 {
   "name": "type-script-arcanoid-2023",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "author": "Bassist.Axel",
+  "license": "MIT",
+  "scripts": {
+	  
+  },
   "packageManager": "yarn@3.1.1",
   "devDependencies": {
     "copy-webpack-plugin": "^11.0.0",
@@ -7,6 +15,14 @@
     "typescript": "^5.1.6",
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4",
-    "webpack-dev-server": "^4.15.1"
+    "webpack-dev-server": "^4.15.1",
+	"@typescript-eslint/eslint-plugin": "^6.1.0",
+    "@typescript-eslint/parser": "^6.1.0",
+    "eslint": "^8.45.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "parcel": "^2.9.3",
+    "parcel-bundler": "^1.12.5",
+    "prettier": "^3.0.0"
   }
 }
