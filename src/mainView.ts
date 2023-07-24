@@ -1,6 +1,7 @@
 // Types
 import { Brick, Ball, Platform } from './sprites';
-import { drawRect, drawCircle } from './helpers';
+import { drawRect, drawCircle, drawText } from './helpers';
+import { SCORE_COLOR } from './setup';
 
 export class MainView {
   canvas: HTMLCanvasElement;
@@ -26,24 +27,43 @@ export class MainView {
   }
 
   drawScore(score: number): void {
-    if (this.scoreDisplay) this.scoreDisplay.innerHTML = score.toString();
+    if (this.scoreDisplay) {
+      let textPositionY = Math.round(this.canvas.height / 24);
+      let textPositionX = this.canvas.width - Math.round(this.canvas.width / 10) 
+      let scoreText = `score: ${score}`;
+      const fontSize = Math.round(this.canvas.height / 33);
+      const font = `bold ${fontSize}px Verdana`;
+
+      drawText(
+        this.context,
+        SCORE_COLOR,
+        font,
+        textPositionX,
+        textPositionY,
+        scoreText,
+        'left');
+    }
   }
 
-  drawInfo(text: string): void {
-    if (this.info) this.info.innerHTML = text;
+  drawInfo(text: string, color: string): void {
+    if(!this.info){
+      return;
+    }
+
+    let textPositionY = Math.round(this.canvas.height / 2);
+    let textPositionX = Math.round(this.canvas.width / 2) 
+    const fontSize = Math.round(this.canvas.width / 18);
+    const font = `bold ${fontSize}px Verdana`;
+
+    drawText(
+      this.context,
+      color,
+      font,
+      textPositionX,
+      textPositionY,
+      text,
+      'center');
   }
-
-//   drawSprite(brick: Brick | Platform | Ball): void {
-//     if (!brick) return;
-
-//     this.context?.drawImage(
-//       brick.image,
-//       brick.pos.x,
-//       brick.pos.y,
-//       brick.width,
-//       brick.height
-//     );
-//   }
 
   drawPlatform(platform: Platform): void {
     drawRect(

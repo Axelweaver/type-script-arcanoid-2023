@@ -7,22 +7,30 @@ export const STAGE_PADDING = 10;
 export const STAGE_ROWS = 20;
 export const STAGE_COLS = 10;
 export const BRICK_PADDING = 5;
+
 export const BRICK_WIDTH = canvas
   ? Math.floor((canvas.width - STAGE_PADDING * 2) / STAGE_COLS) - BRICK_PADDING
   : 100;
 export const BRICK_HEIGHT = canvas
   ? Math.floor((canvas.height - STAGE_PADDING * 2) / STAGE_ROWS) - BRICK_PADDING
   : 30;
+
 export const PLATFORM_WIDTH = 150;
 export const PLATFORM_HEIGHT = 25;
 export const PLATFORM_STARTX = 450;
 export const PLATFORM_SPEED = 10;
 export const PLATFORM_COLOR = '#FFF8DC';
-export const BALL_SPEED = 1;
+export const BALL_SPEED = 3;
 export const BALL_SIZE = 20;
 export const BALL_STARTX = 500;
 export const BALL_STARTY = 400;
 export const BALL_COLOR = '#F0F8FF';
+
+export const BRICK_BLINK_COLOR = '#00FFFF';
+export const SCORE_COLOR = '#7FFFD4';
+export const GAME_OVER_COLOR = '#DC143C';
+export const GAME_WON_COLOR = '#008000';
+export const GAME_START_COLOR = '#FFFFF0';
 
 const RED_BRICK_COLOR = '#A52A2A';
 const GREEN_BRICK_COLOR = '#228B22';

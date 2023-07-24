@@ -12,6 +12,6 @@ export default function drawCircle(
 
     context.fillStyle = color;
     context.beginPath();
-    context.arc(x, y, radius, 0, 2 * Math.PI, false);
+    context.arc(x, y, radius * 2, 0, 2 * Math.PI, false);
     context.fill();
 }

@@ -12,7 +12,10 @@ import {
     BALL_SIZE,
     BALL_STARTX,
     BALL_STARTY,
-    BALL_COLOR
+    BALL_COLOR,
+    GAME_OVER_COLOR,
+    GAME_WON_COLOR,
+    GAME_START_COLOR
   } from './setup';
 
   // Helpers
@@ -23,12 +26,12 @@ let gameOver = false;
 let score = 0;
 
 function setGameOver(view: MainView) {
-  view.drawInfo('Game Over!');
+  view.drawInfo('Game Over!', GAME_OVER_COLOR);
   gameOver = false;
 }
 
 function setGameWin(view: MainView) {
-  view.drawInfo('Game Won!');
+  view.drawInfo('Game Won!', GAME_WON_COLOR);
   gameOver = false;
 }
 
@@ -41,19 +44,23 @@ function gameLoop(
 ) {
 
   console.log('draw!');
-  
+
   view.clear();
+  view.drawScore(score);
+
   view.drawBricks(bricks);
   view.drawPlatform(platfrom);
-  view.drawBall(ball);
+
 
   // Move Ball
   ball.moveBall();
 
+  view.drawBall(ball);
+
   // Move paddle and check so it won't exit the playfield
   if (
-    (platfrom.isMovingLeft && platfrom.position.x > 0) ||
-    (platfrom.isMovingRight && platfrom.position.x < view.canvas.width - platfrom.width)
+    (platfrom.isMovingLeft && platfrom.position.x > 0) 
+    || (platfrom.isMovingRight && platfrom.position.x < view.canvas.width - platfrom.width)
   ) {
     platfrom.move();
   }
@@ -67,7 +74,7 @@ function gameLoop(
   }
 
   // Game Over when ball leaves playField
-  if (ball.position.y > view.canvas.height) {
+  if ((ball.position.y - ball.height) > view.canvas.height) {
     gameOver = true;
   }
 
@@ -87,7 +94,7 @@ function gameLoop(
 function startGame(view: MainView) {
   // Reset displays
   score = 0;
-  view.drawInfo('');
+  view.drawInfo('GET READY!', GAME_START_COLOR);
   view.drawScore(0);
   // Create a collision instance
   const collision = new Collision();

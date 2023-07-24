@@ -30,7 +30,7 @@ export default class Ball {
   }
 
   get radius(): number {
-    return this._ballSize;
+    return Math.round(this._ballSize / 2);
   }
   
   get position(): Vector {

@@ -1,4 +1,5 @@
 import { Vector } from '../types';
+import { BRICK_BLINK_COLOR } from '../setup';
 
 export default class Brick {
   private brickColor: string;
@@ -15,6 +16,16 @@ export default class Brick {
     this._position = _position;
     this._brickEnergy = _brickEnergy;
     this.brickColor = color;
+  }
+
+  private blink(): void{
+    if(this._brickEnergy <= 0){
+      return;
+    }
+
+    let oldColor = this.brickColor;
+    this.brickColor = BRICK_BLINK_COLOR;
+    setTimeout(() => this.brickColor = oldColor, 70);
   }
 
   // Getters
@@ -41,5 +52,6 @@ export default class Brick {
   // Setter
   set energy(energy: number) {
     this._brickEnergy = energy;
+    this.blink();
   }
 }

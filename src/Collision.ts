@@ -3,24 +3,14 @@ import { MainView } from "./mainView";
 
 export class Collision {
     isCollidingBrick(ball: Ball, brick: Brick): boolean {
-      if (
-        ball.position.x < brick.position.x + brick.width 
-        && ball.position.x + ball.width > brick.position.x 
-        && ball.position.y < brick.position.y + brick.height 
-        && ball.position.y + ball.height > brick.position.y
-      ) {
-        console.log(`ball.position.x=${ball.position.x}`);
-        console.log(`ball.position.y=${ball.position.y}`);        
-        console.log(`ball.height=${ball.height}`);
-        console.log(`ball.width=${ball.width}`);           
-        console.log(`brick.position.x=${brick.position.x}`);
-        console.log(`brick.position.y=${brick.position.y}`);        
-        console.log(`brick.height=${brick.height}`);
-        console.log(`brick.width=${brick.width}`);              
-        return true;
-      }
 
-      return false;
+      return !(
+        
+        ((ball.position.y + ball.radius) <= brick.position.y)
+     || ((ball.position.y - ball.radius) >= (brick.position.y + brick.height))
+     || ((ball.position.x + ball.radius) <= brick.position.x)
+     || ((ball.position.x - ball.radius) >= (brick.position.x + brick.width))
+              );
     }
   
     // Check ball collision with bricks
@@ -47,19 +37,20 @@ export class Collision {
     checkBallCollision(ball: Ball, platform: Platform, view: MainView): void {
       // 1. Check ball collision with paddle
       if (
-        ball.position.x + ball.width > platform.position.x &&
-        ball.position.x < platform.position.x + platform.width &&
-        ball.position.y + ball.height === platform.position.y
+        (ball.position.x - ball.radius) >= platform.position.x 
+        && (ball.position.x + ball.radius) <= (platform.position.x + platform.width) 
+        && (ball.position.y + ball.radius) >= platform.position.y
       ) {
         ball.changeYDirection();
       }
       // 2. Check ball collision with walls
       // Ball movement X constraints
-      if (ball.position.x > view.canvas.width - ball.width || ball.position.x < 0) {
+      if (ball.position.x  >= (view.canvas.width - ball.radius) 
+       || ball.position.x - ball.radius <= 0) {
         ball.changeXDirection();
       }
       // Ball movement Y constraints
-      if (ball.position.y < 0) {
+      if (ball.position.y - ball.radius <= 0) {
         ball.changeYDirection();
       }
     }
