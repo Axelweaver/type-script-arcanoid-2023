@@ -49,6 +49,24 @@ yarn build
 ![image](https://github.com/Axelweaver/type-script-arcanoid-2023/assets/15805062/d0d1911d-2b76-4f0e-8348-31b6d09b8ca9)
 
 
+To start debugging an application in real time, you need to run the following command:
+```bash
+yarn dev
+```
+Display the following in the console:
+![image](https://github.com/Axelweaver/type-script-arcanoid-2023/assets/15805062/01723161-0584-4107-a5d6-2071f38dff97)
+
+Press the O key to open the application in the browser.
+To exit debug mode - Q
+
+### Development environment
+
+To work on this project, I used the VSСode IDE, it can be downloaded for free from the page: <https://code.visualstudio.com/>
+
+![image](https://github.com/Axelweaver/type-script-arcanoid-2023/assets/15805062/a0b1ecb8-220c-406d-a663-7cf9686c7e31)
+
+
+![image](https://github.com/Axelweaver/type-script-arcanoid-2023/assets/15805062/e970c1ba-52d3-4511-9046-b0a92a05b379)
 
 
 
