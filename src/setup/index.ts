@@ -17,12 +17,12 @@ export const PLATFORM_WIDTH = 150;
 export const PLATFORM_HEIGHT = 25;
 export const PLATFORM_STARTX = 450;
 export const PLATFORM_SPEED = 10;
-export const PLATFORM_COLOR = '#2F4F4F';
+export const PLATFORM_COLOR = '#FFF8DC';
 export const BALL_SPEED = 5;
 export const BALL_SIZE = 20;
 export const BALL_STARTX = 500;
 export const BALL_STARTY = 400;
-export const BALL_COLOR = 'CD5C5C';
+export const BALL_COLOR = '#F0F8FF';
 
 const RED_BRICK_COLOR = '#A52A2A';
 const GREEN_BRICK_COLOR = '#228B22';

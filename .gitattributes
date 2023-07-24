@@ -1,0 +1,10 @@
+/.yarn/**            linguist-vendored
+/.yarn/releases/*    binary
+/.yarn/plugins/**/*  binary
+/.pnp.*              binary linguist-generated
+* text=auto
+* text eol=lf
+*.zip binary
+# GitHub Linguist Override
+.yarn/* linguist-vendored
+.pnp.js linguist-vendored

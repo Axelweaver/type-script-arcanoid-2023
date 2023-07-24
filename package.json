@@ -1,3 +1,20 @@
 {
+  "name": "type-script-arcanoid-2023",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "source": "src/index.html",
+  "author": "Bassist.Axel",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "typescript": "^5.1.6",
+    "vite": "^4.4.6"
+  },
   "packageManager": "yarn@3.6.1"
+
 }

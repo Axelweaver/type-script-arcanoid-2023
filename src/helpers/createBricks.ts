@@ -1,6 +1,6 @@
 import { Brick } from '../sprites';
 import {
-  //BRICK_IMAGES,
+  BRICK_COLORS,
   LEVEL,
   STAGE_COLS,
   STAGE_PADDING,
@@ -27,7 +27,7 @@ export default function createBricks(): Brick[] {
         BRICK_HEIGHT,
         { x, y },
         BRICK_ENERGY[element],
-        //BRICK_IMAGES[element]
+        BRICK_COLORS[element]
       )
     ];
   }, [] as Brick[]);

@@ -27,7 +27,7 @@ export default class Brick {
   }
 
   get position(): Vector {
-    return this.position;
+    return this._position;
   }
 
   get color(): string {
