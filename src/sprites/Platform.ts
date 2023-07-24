@@ -62,21 +62,25 @@ export default class Platform {
   }
 
   handleKeyUp = (e: KeyboardEvent): void => {
-    if (e.code === 'ArrowLeft' || e.key === 'ArrowLeft') {
+    if (e.code === 'ArrowLeft' || e.key === 'ArrowLeft'
+        || e.code === 'KeyA' || e.key.toUpperCase() === 'A') {
         this.moveLeft = false;
     }
 
-    if (e.code === 'ArrowRight' || e.key === 'ArrowRight') {
+    if (e.code === 'ArrowRight' || e.key === 'ArrowRight'
+        || e.code === 'KeyD' || e.key.toUpperCase() === 'D') {
       this.moveRight = false;
     }
   };
 
   handleKeyDown = (e: KeyboardEvent): void => {
-    if (e.code === 'ArrowLeft' || e.key === 'ArrowLeft') {
+    if (e.code === 'ArrowLeft' || e.key === 'ArrowLeft'
+        || e.code === 'KeyA' || e.key.toUpperCase() === 'A') {
         this.moveLeft = true;
     }
 
-    if (e.code === 'ArrowRight' || e.key === 'ArrowRight') {
+    if (e.code === 'ArrowRight' || e.key === 'ArrowRight'
+        || e.code === 'KeyD' || e.key.toUpperCase() === 'D') {
       this.moveRight = true;
     }
   };
