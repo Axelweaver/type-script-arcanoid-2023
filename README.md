@@ -2,7 +2,7 @@
 ### 🌍 Environment
 | Software	| Version(s)
 | --- | ---
-| Node.JS	| v2 (linked locally, using 538ee40)
+| Node.JS	| v20.3.1
 | npm/Yarn	| yarn v3.6.11
 | TypeScript | v5.1.6
 | Vite | v4.4.6
