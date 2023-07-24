@@ -17,6 +17,8 @@ import {
 
   // Helpers
 import { createBricks } from './helpers';
+
+
 let gameOver = false;
 let score = 0;
 
@@ -37,11 +39,14 @@ function gameLoop(
   ball: Ball,
   collision: Collision
 ) {
+
   console.log('draw!');
+  
   view.clear();
   view.drawBricks(bricks);
   view.drawPlatform(platfrom);
   view.drawBall(ball);
+
   // Move Ball
   ball.moveBall();
 
@@ -62,11 +67,19 @@ function gameLoop(
   }
 
   // Game Over when ball leaves playField
-  if (ball.position.y > view.canvas.height) gameOver = true;
+  if (ball.position.y > view.canvas.height) {
+    gameOver = true;
+  }
+
   // If game won, set gameOver and display win
-  if (bricks.length === 0) return setGameWin(view);
+  if (bricks.length === 0) {
+    return setGameWin(view);
+  }
+
   // Return if gameover and don't run the requestAnimationFrame
-  if (gameOver) return setGameOver(view);
+  if (gameOver) {
+    return setGameOver(view);
+  }
 
   requestAnimationFrame(() => gameLoop(view, bricks, platfrom, ball, collision));
 }

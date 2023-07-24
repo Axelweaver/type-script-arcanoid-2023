@@ -4,13 +4,22 @@ import { MainView } from "./mainView";
 export class Collision {
     isCollidingBrick(ball: Ball, brick: Brick): boolean {
       if (
-        ball.position.x < brick.position.x + brick.width &&
-        ball.position.x + ball.width > brick.position.x &&
-        ball.position.y < brick.position.y + brick.height &&
-        ball.position.y + ball.height > brick.position.y
+        ball.position.x < brick.position.x + brick.width 
+        && ball.position.x + ball.width > brick.position.x 
+        && ball.position.y < brick.position.y + brick.height 
+        && ball.position.y + ball.height > brick.position.y
       ) {
+        console.log(`ball.position.x=${ball.position.x}`);
+        console.log(`ball.position.y=${ball.position.y}`);        
+        console.log(`ball.height=${ball.height}`);
+        console.log(`ball.width=${ball.width}`);           
+        console.log(`brick.position.x=${brick.position.x}`);
+        console.log(`brick.position.y=${brick.position.y}`);        
+        console.log(`brick.height=${brick.height}`);
+        console.log(`brick.width=${brick.width}`);              
         return true;
       }
+
       return false;
     }
   
@@ -27,9 +36,11 @@ export class Collision {
           } else {
             brick.energy -= 1;
           }
+
           colliding = true;
         }
       });
+
       return colliding;
     }
   
