@@ -1,6 +1,6 @@
 // Types
 import { Brick, Ball, Platform } from './sprites';
-import { drawRect, drawCircle, drawText } from './helpers';
+import { drawRect, drawCircle, drawText, drawLives } from './helpers';
 import { SCORE_COLOR, GAME_START_COLOR } from './setup';
 
 export class MainView {
@@ -55,25 +55,18 @@ export class MainView {
 
   }
 
-  drawLives(lives: number): void {
+  showLives(countLives: number): void {
 
-    let textPositionY = Math.round(this.canvas.height / 24);
-    let textPositionX = Math.round(this.canvas.width / 22) 
-    let scoreText = `lives: ${lives}`;
-    const fontSize = Math.round(this.canvas.height / 33);
-    const font = `bold ${fontSize}px Verdana`;
+    let textPositionY = Math.round(this.canvas.height / 36);
+    let textPositionX = Math.round(this.canvas.width * .025) 
 
-    drawText(
+    drawLives(
       this.context,
-      SCORE_COLOR,
-      font,
+      countLives,
       textPositionX,
-      textPositionY,
-      scoreText,
-      'left');
-
+      textPositionY
+    );
   }
-
 
   drawInfo(text: string, color: string): void {
 

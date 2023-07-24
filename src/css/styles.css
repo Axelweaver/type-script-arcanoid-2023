@@ -1,4 +1,8 @@
-:root {
+  body {
+    background-color: black;
+    color: #F8F8FF;
+  }
+  :root {
     --width: 1000px;
     --height: 650px;
   }
@@ -18,9 +22,14 @@
     left: 0;
     top: 25%;
     z-index: 10;
-    border-top: 1px solid grey;
-    border-left: 1px solid grey;
-    border-right: 1px solid grey;
+    border: 1px solid grey;
     background-color: transparent;
     background-image: url('../images/background.png');
+  }
+  .text-info {
+    position: absolute;
+    bottom: -30%;
+    text-align: center;
+    width: 100%;
+    font-size: 22px;
   }

@@ -8,8 +8,6 @@ import {
     GAME_WON_COLOR,
     GAME_START_COLOR
   } from './setup';
-
-  // Helpers
 import { createBricks, createBall, createPlatform } from './helpers';
 
 let gameOver = false;
@@ -29,6 +27,7 @@ function setGameWin(view: MainView) {
   view.waitPressToStart();
 }
 
+// game loop, when it active
 function gameLoop(
   view: MainView,
   bricks: Brick[],
@@ -36,12 +35,9 @@ function gameLoop(
   ball: Ball,
   collision: Collision
 ) {
-
-  console.log('draw!');
-
   view.clear();
   view.drawScore(score);
-  view.drawLives(lives);
+  view.showLives(lives);
   view.drawBricks(bricks);
   view.drawPlatform(platfrom);
 
@@ -69,13 +65,13 @@ function gameLoop(
 
     // Game Over when ball leaves playField
     if ((ball.position.y - ball.height) > view.canvas.height) {
-      if(lives < 2){
+      
+      // lost one life
+      lives = lives - 1;
+
+      if(lives < 1){
         gameOver = true;
-
       } else {
-        lives -=1;
-
-        
         start = false;
       }
     }
@@ -89,7 +85,8 @@ function gameLoop(
     if (gameOver) {
       return setGameOver(view);
     }
-  } else {
+
+  } else { // waiting for press space
     view.drawInfo('GET READY!', GAME_START_COLOR);
     view.waitPressToStart();
     if ((ball.position.y - ball.height) > view.canvas.height) {

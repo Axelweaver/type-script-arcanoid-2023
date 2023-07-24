@@ -1,3 +1,5 @@
+import EMPTY_HEART from '../images/emptyheart.png';
+import FILLED_HEART from '../images/filledheart.png';
 // Grab the canvas element for calculating the brick width
 // depending on canvas width
 const canvas: HTMLCanvasElement | null = document.querySelector('#gameCanvas');
@@ -15,6 +17,12 @@ export const BRICK_WIDTH = canvas
 export const BRICK_HEIGHT = canvas
   ? Math.floor((canvas.height - STAGE_PADDING * 2) / STAGE_ROWS) - BRICK_PADDING
   : 30;
+
+export const LIVES_HEARTS: { [key: number]: string} = {
+  0: EMPTY_HEART,
+  1: FILLED_HEART
+}
+export const LIVES_HEART_SIZE = 20;
 
 export const PLATFORM_WIDTH = 150;
 export const PLATFORM_HEIGHT = 25;
