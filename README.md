@@ -54,6 +54,7 @@ To start debugging an application in real time, you need to run the following co
 yarn dev
 ```
 Display the following in the console:
+
 ![image](https://github.com/Axelweaver/type-script-arcanoid-2023/assets/15805062/01723161-0584-4107-a5d6-2071f38dff97)
 
 Press the O key to open the application in the browser.
