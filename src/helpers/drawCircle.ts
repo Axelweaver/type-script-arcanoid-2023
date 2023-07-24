@@ -1,11 +1,11 @@
-export default function drawCircle(
+export default function drawCircle (
     context: CanvasRenderingContext2D | null,
     color: string,
     x: number,
     y: number,
     radius: number
 
-){
+): void {
     if(!context){
         return;
     }

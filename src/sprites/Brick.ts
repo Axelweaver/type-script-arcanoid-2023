@@ -18,7 +18,7 @@ export default class Brick {
     this.brickColor = color;
   }
 
-  private blink(): void{
+  private blink(): void {
     if(this._brickEnergy <= 0){
       return;
     }

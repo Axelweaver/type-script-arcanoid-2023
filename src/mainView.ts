@@ -54,7 +54,7 @@ export class MainView {
       'left');
 
   }
-
+// show hearts of lives
   showLives(countLives: number): void {
 
     let textPositionY = Math.round(this.canvas.height / 36);

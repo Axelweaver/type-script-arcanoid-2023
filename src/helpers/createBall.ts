@@ -4,7 +4,8 @@ import {
     BALL_SIZE, 
     BALL_STARTX, 
     BALL_STARTY, 
-    BALL_COLOR } from "../setup";
+    BALL_COLOR 
+} from "../setup";
 
 export default function createBall():Ball {
       // Create a Ball

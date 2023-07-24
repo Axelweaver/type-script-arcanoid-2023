@@ -10,7 +10,7 @@ export class Collision {
      || ((ball.position.y - ball.radius) >= (brick.position.y + brick.height))
      || ((ball.position.x + ball.radius) <= brick.position.x)
      || ((ball.position.x - ball.radius) >= (brick.position.x + brick.width))
-              );
+      );
     }
   
     // Check ball collision with bricks
