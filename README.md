@@ -10,7 +10,7 @@
 | Software	| Version(s)
 | --- | ---
 | Node.JS	| v20.3.1
-| npm/Yarn	| yarn v3.6.11
+| npm/Yarn	| yarn v3.6.1
 | TypeScript | v5.1.6
 | Vite | v4.4.6
 | IDE | VSCode v1.80.1
