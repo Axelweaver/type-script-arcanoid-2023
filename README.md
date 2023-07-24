@@ -1,5 +1,5 @@
 # type-script-arcanoid-2023
-🌍 ###Environment
+🌍 ### Environment
 | Software	| Version(s)
 | --- | ---
 | Node.JS	| v2 (linked locally, using 538ee40)
