@@ -35,11 +35,12 @@ export class Collision {
     }
   
     checkBallCollision(ball: Ball, platform: Platform, view: MainView): void {
-      // 1. Check ball collision with paddle
+      // 1. Check ball collision with platform
       if (
         (ball.position.x - ball.radius) >= platform.position.x 
         && (ball.position.x + ball.radius) <= (platform.position.x + platform.width) 
         && (ball.position.y + ball.radius) >= platform.position.y
+        && (ball.position.y + ball.radius) <= platform.position.y + 2
       ) {
         ball.changeYDirection();
       }

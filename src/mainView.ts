@@ -1,21 +1,15 @@
 // Types
 import { Brick, Ball, Platform } from './sprites';
 import { drawRect, drawCircle, drawText } from './helpers';
-import { SCORE_COLOR } from './setup';
+import { SCORE_COLOR, GAME_START_COLOR } from './setup';
 
 export class MainView {
   canvas: HTMLCanvasElement;
   private context: CanvasRenderingContext2D | null;
-  private scoreDisplay: HTMLObjectElement | null;
-  private start: HTMLObjectElement | null;
-  private info: HTMLObjectElement | null;
 
   constructor(canvasName: string) {
     this.canvas = document.querySelector(canvasName) as HTMLCanvasElement;
     this.context = this.canvas.getContext('2d');
-    this.scoreDisplay = document.querySelector('#score');
-    this.start = document.querySelector('#start');
-    this.info = document.querySelector('#info');
   }
 
   clear(): void {
@@ -23,36 +17,86 @@ export class MainView {
   }
 
   initStartButton(startFunction: (view: MainView) => void): void {
-    this.start?.addEventListener('click', () => startFunction(this));
+
+    let handleKeyUp = (e: KeyboardEvent): void => {
+      if (e.code === 'Space' || e.key === 'Space') {
+        //console.log('e.code=', e.code, 'e.key=', e.key);
+        startFunction(this);
+      }
+    };
+
+    document.addEventListener('keypress', handleKeyUp);
+    
+    this.drawInfo('GET READY', GAME_START_COLOR);
+    this.waitPressToStart();
+
+  }
+
+  waitPressToStart(){
+    this.drawSecondaryInfo('press space', GAME_START_COLOR);  
   }
 
   drawScore(score: number): void {
-    if (this.scoreDisplay) {
-      let textPositionY = Math.round(this.canvas.height / 24);
-      let textPositionX = this.canvas.width - Math.round(this.canvas.width / 10) 
-      let scoreText = `score: ${score}`;
-      const fontSize = Math.round(this.canvas.height / 33);
-      const font = `bold ${fontSize}px Verdana`;
 
-      drawText(
-        this.context,
-        SCORE_COLOR,
-        font,
-        textPositionX,
-        textPositionY,
-        scoreText,
-        'left');
-    }
+    let textPositionY = Math.round(this.canvas.height / 24);
+    let textPositionX = this.canvas.width - Math.round(this.canvas.width / 8) 
+    let scoreText = `score: ${score}`;
+    const fontSize = Math.round(this.canvas.height / 33);
+    const font = `bold ${fontSize}px Verdana`;
+
+    drawText(
+      this.context,
+      SCORE_COLOR,
+      font,
+      textPositionX,
+      textPositionY,
+      scoreText,
+      'left');
+
   }
 
+  drawLives(lives: number): void {
+
+    let textPositionY = Math.round(this.canvas.height / 24);
+    let textPositionX = Math.round(this.canvas.width / 22) 
+    let scoreText = `lives: ${lives}`;
+    const fontSize = Math.round(this.canvas.height / 33);
+    const font = `bold ${fontSize}px Verdana`;
+
+    drawText(
+      this.context,
+      SCORE_COLOR,
+      font,
+      textPositionX,
+      textPositionY,
+      scoreText,
+      'left');
+
+  }
+
+
   drawInfo(text: string, color: string): void {
-    if(!this.info){
-      return;
-    }
 
     let textPositionY = Math.round(this.canvas.height / 2);
     let textPositionX = Math.round(this.canvas.width / 2) 
     const fontSize = Math.round(this.canvas.width / 18);
+    const font = `bold ${fontSize}px Verdana`;
+
+    drawText(
+      this.context,
+      color,
+      font,
+      textPositionX,
+      textPositionY,
+      text,
+      'center');
+  }
+
+  drawSecondaryInfo(text: string, color: string): void {
+
+    let textPositionY = Math.round(this.canvas.height / 2) + Math.round(this.canvas.height / 5);
+    let textPositionX = Math.round(this.canvas.width / 2) 
+    const fontSize = Math.round(this.canvas.width / 22);
     const font = `bold ${fontSize}px Verdana`;
 
     drawText(

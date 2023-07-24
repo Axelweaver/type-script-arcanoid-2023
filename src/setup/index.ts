@@ -3,6 +3,7 @@
 const canvas: HTMLCanvasElement | null = document.querySelector('#gameCanvas');
 
 // Constants
+export const INITIAL_LIVES = 3;
 export const STAGE_PADDING = 10;
 export const STAGE_ROWS = 20;
 export const STAGE_COLS = 10;
@@ -21,7 +22,7 @@ export const PLATFORM_STARTX = 450;
 export const PLATFORM_SPEED = 10;
 export const PLATFORM_COLOR = '#FFF8DC';
 export const BALL_SPEED = 3;
-export const BALL_SIZE = 20;
+export const BALL_SIZE = 14;
 export const BALL_STARTX = 500;
 export const BALL_STARTY = 400;
 export const BALL_COLOR = '#F0F8FF';
