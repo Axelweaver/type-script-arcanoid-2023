@@ -1,5 +1,6 @@
 # type-script-arcanoid-2023
-![image](https://github.com/Axelweaver/type-script-arcanoid-2023/assets/15805062/9af48abe-5402-4e4a-a53b-b431c75cac62)
+![image](https://github.com/Axelweaver/type-script-arcanoid-2023/assets/15805062/1dcf8394-6261-48d5-b8f8-33e0eba2107d)
+
 
 # [Try to play!](https://axelweaver.github.io/type-script-arcanoid-2023/) 
 
