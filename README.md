@@ -64,6 +64,12 @@ Display the following in the console:
 Press the O key to open the application in the browser.
 To exit debug mode - Q
 
+If you want to run an ESLint check and fix the simplest remarks right away, run this command:
+
+```bash
+yarn lint --fix
+```
+
 ### Development environment
 
 To work on this project, I used the VSСode IDE, it can be downloaded for free from the page: <https://code.visualstudio.com/>
