@@ -7,14 +7,24 @@
   "author": "Bassist.Axel",
   "license": "MIT",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --mode development",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "check-types": "tsc --noEmit",
+    "lint": "eslint \"./src/**/*.{js,jsx,ts,tsx}\""
   },
   "devDependencies": {
-    "typescript": "^5.1.6",
-    "vite": "^4.4.6"
+    "@typescript-eslint/eslint-plugin": "^5.52.0",
+    "@typescript-eslint/parser": "6.2.0",
+    "eslint": "^8.0.1",
+    "eslint-config-standard-with-typescript": "latest",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-n": "^15.0.0 || ^16.0.0 ",
+    "eslint-plugin-no-relative-import-paths": "^1.5.2",
+    "eslint-plugin-promise": "^6.0.0",
+    "typescript": "*",
+    "vite": "^4.4.6",
+    "vite-plugin-eslint": "^1.8.1"
   },
   "packageManager": "yarn@3.6.1"
-
 }

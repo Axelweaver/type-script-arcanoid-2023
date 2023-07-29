@@ -6,7 +6,7 @@ export default function drawCircle (
     radius: number
 
 ): void {
-    if(!context){
+    if (context == null) {
         return;
     }
 

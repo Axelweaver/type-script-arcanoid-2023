@@ -1,57 +1,57 @@
-import { Vector } from '../types';
+import { type IVector, type IRectangle } from '../types';
 import { BRICK_BLINK_COLOR } from '../setup';
 
-export default class Brick {
-  private brickColor: string;
+export default class Brick implements IRectangle {
+    private brickColor: string;
 
-  constructor(
-    private _brickWidth: number,
-    private _brickHeight: number,
-    private _position: Vector,
-    private _brickEnergy: number,
-    color: string
-  ) {
-    this._brickWidth = _brickWidth;
-    this._brickHeight = _brickHeight;
-    this._position = _position;
-    this._brickEnergy = _brickEnergy;
-    this.brickColor = color;
-  }
-
-  private blink(): void {
-    if(this._brickEnergy <= 0){
-      return;
+    constructor (
+        private readonly _brickWidth: number,
+        private readonly _brickHeight: number,
+        private readonly _position: IVector,
+        private _brickEnergy: number,
+        color: string
+    ) {
+        this._brickWidth = _brickWidth;
+        this._brickHeight = _brickHeight;
+        this._position = _position;
+        this._brickEnergy = _brickEnergy;
+        this.brickColor = color;
     }
 
-    let oldColor = this.brickColor;
-    this.brickColor = BRICK_BLINK_COLOR;
-    setTimeout(() => this.brickColor = oldColor, 70);
-  }
+    private blink (): void {
+        if (this._brickEnergy <= 0) {
+            return;
+        }
 
-  // Getters
-  get width(): number {
-    return this._brickWidth;
-  }
+        const oldColor = this.brickColor;
+        this.brickColor = BRICK_BLINK_COLOR;
+        setTimeout(() => { this.brickColor = oldColor; }, 70);
+    }
 
-  get height(): number {
-    return this._brickHeight;
-  }
+    // Getters
+    get width (): number {
+        return this._brickWidth;
+    }
 
-  get position(): Vector {
-    return this._position;
-  }
+    get height (): number {
+        return this._brickHeight;
+    }
 
-  get color(): string {
-    return this.brickColor;
-  }
+    get position (): IVector {
+        return this._position;
+    }
 
-  get energy(): number {
-    return this._brickEnergy;
-  }
+    get color (): string {
+        return this.brickColor;
+    }
 
-  // Setter
-  set energy(energy: number) {
-    this._brickEnergy = energy;
-    this.blink();
-  }
+    get energy (): number {
+        return this._brickEnergy;
+    }
+
+    // Setter
+    set energy (energy: number) {
+        this._brickEnergy = energy;
+        this.blink();
+    }
 }

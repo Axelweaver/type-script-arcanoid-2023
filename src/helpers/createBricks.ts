@@ -1,34 +1,34 @@
 import { Brick } from '../sprites';
 import {
-  BRICK_COLORS,
-  LEVEL,
-  STAGE_COLS,
-  STAGE_PADDING,
-  BRICK_WIDTH,
-  BRICK_HEIGHT,
-  BRICK_PADDING,
-  BRICK_ENERGY
+    BRICK_COLORS,
+    LEVEL,
+    STAGE_COLS,
+    STAGE_PADDING,
+    BRICK_WIDTH,
+    BRICK_HEIGHT,
+    BRICK_PADDING,
+    BRICK_ENERGY
 } from '../setup';
 
-export default function createBricks(): Brick[] {
-  return LEVEL.reduce((ack, element, i) => {
-    const row = Math.floor((i + 1) / STAGE_COLS);
-    const col = i % STAGE_COLS;
+export default function createBricks (): Brick[] {
+    return LEVEL.reduce<Brick[]>((ack, element, i) => {
+        const row = Math.floor((i + 1) / STAGE_COLS);
+        const col = i % STAGE_COLS;
 
-    const x = STAGE_PADDING + col * (BRICK_WIDTH + BRICK_PADDING);
-    const y = STAGE_PADDING + row * (BRICK_HEIGHT + BRICK_PADDING);
+        const x = STAGE_PADDING + col * (BRICK_WIDTH + BRICK_PADDING);
+        const y = STAGE_PADDING + row * (BRICK_HEIGHT + BRICK_PADDING);
 
-    if (element === 0) return ack;
+        if (element === 0) return ack;
 
-    return [
-      ...ack,
-      new Brick(
-        BRICK_WIDTH,
-        BRICK_HEIGHT,
-        { x, y },
-        BRICK_ENERGY[element],
-        BRICK_COLORS[element]
-      )
-    ];
-  }, [] as Brick[]);
+        return [
+            ...ack,
+            new Brick(
+                BRICK_WIDTH,
+                BRICK_HEIGHT,
+                { x, y },
+                BRICK_ENERGY[element],
+                BRICK_COLORS[element]
+            )
+        ];
+    }, []);
 }
