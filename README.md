@@ -1,4 +1,8 @@
 # type-script-arcanoid-2023
+
+### An example of creating a simple Arkanoid game on TypeScript using Canvas and geometric shapes.
+
+
 ![image](https://github.com/Axelweaver/type-script-arcanoid-2023/assets/15805062/1dcf8394-6261-48d5-b8f8-33e0eba2107d)
 
 
