@@ -10,6 +10,4 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
     }
   }
   return { plugins: [eslint()] };
-
-  //return {};
 });
